@@ -13,15 +13,6 @@ OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 
 def simulate_container_monitoring_data(n_normal: int = 400, n_anom: int = 100, seed: int = 42, label_noise: float = 0.0):
-    """
-    更复杂的容器监控数据生成器，包含：
-    - 正常样本的混合分布（多模态）
-    - 多种异常类型与强度（短时突发 + 持续漂移 + 隐蔽型APT）
-    - 指标间相关性噪声，时间趋势与日内季节性
-    - 少量标签噪声
-
-    返回：X, y
-    """
     rng = np.random.default_rng(seed)
 
     normal_samples = []
