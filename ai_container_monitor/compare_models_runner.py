@@ -1,13 +1,3 @@
-"""
-对比实验运行器：使用模拟容器监控数据比较我们最终的 Agent 模型与多个基线方法，输出论文风格表格。
-
-输出：
-- monitoring_results/compare_results.csv
-- monitoring_results/compare_results.md
-- monitoring_results/compare_results.png (学术风格表格图片)
-
-依赖：sklearn, numpy, pandas, matplotlib
-"""
 from __future__ import annotations
 
 import numpy as np
@@ -31,11 +21,6 @@ import pandas as _pd
 
 
 def load_real_agent_data(data_dir: os.PathLike) -> Tuple[np.ndarray, np.ndarray]:
-    """Load real agent CSVs and produce feature matrix X and binary labels y.
-
-    Mapping: per-container aggregated sample with features [cpu, mem, netio, diskio, syscall_rate].
-    Label: container_name containing 'anomaly' -> 1 else 0.
-    """
     data_dir = Path(data_dir)
     # find files
     proc_files = sorted(glob.glob(str(data_dir / 'process_*.csv')))
