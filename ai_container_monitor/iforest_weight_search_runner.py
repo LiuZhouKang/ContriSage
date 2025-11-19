@@ -1,7 +1,3 @@
-"""
-独立运行器：对 IForest 集成权重做网格搜索并生成 3D 表面图。
-此脚本独立于主模块（避免导入有语法错误的模块），仅用于生成权重搜索图像。
-"""
 from __future__ import annotations
 
 import numpy as np
